@@ -20,13 +20,6 @@ submitForm.addEventListener("submit", (event) => {
         .then((res) => res.json())
         .then((data) => {
             console.log(data);
-            const { token } = data;
-            if (token) {
-                localStorage.setItem("jwt", token);
-                location.href = "index.html";
-            } else {
-                alert("Send Again");
-            }
         })
         .catch((err) => {
             alert("Error while sending query.... try again!");
